@@ -51,7 +51,7 @@ impl Signature {
                 let mut sum = [0u64; 3];
                 for y in y0..y1 {
                     let line = &raw[(y * w + x0) * 3..(y * w + x1) * 3];
-                    for p in line.chunks_exact(3) {
+                    for p in line.as_chunks::<3>().0 {
                         sum[0] += p[0] as u64;
                         sum[1] += p[1] as u64;
                         sum[2] += p[2] as u64;
