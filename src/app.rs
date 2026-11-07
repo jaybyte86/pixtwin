@@ -874,9 +874,10 @@ fn tail_path(path: &str, max_chars: usize) -> String {
     if path.chars().count() <= max_chars {
         return path.to_string();
     }
-    let sep = std::path::MAIN_SEPARATOR;
+    // Windows paths may use `\` or `/`; keep whichever the path itself uses.
+    let sep = if path.contains('\\') { '\\' } else { '/' };
     let mut tail = String::new();
-    for part in path.rsplit(sep).filter(|s| !s.is_empty()) {
+    for part in path.rsplit(['/', '\\']).filter(|s| !s.is_empty()) {
         let candidate = if tail.is_empty() { part.to_string() } else { format!("{part}{sep}{tail}") };
         if candidate.chars().count() + 2 > max_chars {
             break;
@@ -948,5 +949,6 @@ mod tests {
         assert_eq!(tail_path("/a/b", 10), "/a/b");
         assert_eq!(tail_path("/home/user/photos/2024/summer", 16), "…/2024/summer");
         assert_eq!(tail_path("/x/averyveryverylongfoldername", 10), "…oldername");
+        assert_eq!(tail_path(r"C:\Users\me\Pictures\2024\summer", 16), r"…\2024\summer");
     }
 }
