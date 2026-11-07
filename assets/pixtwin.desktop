@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=PixTwin
+GenericName=Duplicate Image Finder
+Comment=Find similar and duplicate images
+Exec=pixtwin %F
+Icon=pixtwin
+Terminal=false
+Categories=Graphics;Utility;
+Keywords=duplicate;images;photos;similar;

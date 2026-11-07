@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>PixTwin</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#56D6C4"/>
+      <stop offset="1" stop-color="#638CFF"/>
+    </linearGradient>
+    <clipPath id="front-inner">
+      <rect x="194" y="176" width="216" height="216" rx="20"/>
+    </clipPath>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#161A22"/>
+  <g transform="rotate(-10 196 222)">
+    <rect x="78" y="104" width="236" height="236" rx="34" fill="#607096"/>
+    <rect x="94" y="120" width="204" height="204" rx="20" fill="#3E5CA0"/>
+  </g>
+  <g transform="rotate(8 302 284)">
+    <rect x="178" y="160" width="248" height="248" rx="34" fill="#F2F5FB"/>
+    <g clip-path="url(#front-inner)">
+      <rect x="194" y="176" width="216" height="216" fill="url(#sky)"/>
+      <circle cx="361" cy="225" r="21" fill="#FFD166"/>
+      <polygon points="194,392 264,297 314,347 344,317 410,392" fill="#18223A"/>
+    </g>
+  </g>
+  <circle cx="400" cy="388" r="48" fill="#48C78E" stroke="#161A22" stroke-width="10"/>
+  <polyline points="376,389 394,407 425,370" fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

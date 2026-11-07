@@ -1,0 +1,30 @@
+[package]
+name = "pixtwin"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95"
+description = "Find similar and duplicate images – resized, recompressed, cropped, brightened or rotated."
+readme = "README.md"
+license = "MIT"
+keywords = ["duplicates", "images", "photos", "similarity", "gui"]
+categories = ["multimedia::images", "filesystem", "gui"]
+exclude = ["/.github", "/docs"]
+
+[dependencies]
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+crossbeam-channel = "0.5.17"
+eframe = "0.37"
+image = "0.25.10"
+open = "5.4.5"
+rayon = "1.12.0"
+rfd = "0.17.2"
+trash = "5.3.0"
+walkdir = "2.5.0"
+
+[build-dependencies]
+winresource = "0.1"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
